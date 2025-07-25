@@ -9,14 +9,14 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="http://craigjope.com" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="http://craigjope.com" target="_blank">
           <img src={reactLogo} className="logo" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Getting things set up here...</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
