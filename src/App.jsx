@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import SimpleBottomNavigation from "./BottomNavigation";
-import TopAppBar from "./assets/TopAppBar.jsx";
+import TopAppBar from "./TopAppBar.jsx";
 import "./App.css";
 import Projects from "./Projects";
 
