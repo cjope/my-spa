@@ -4,6 +4,7 @@ import viteLogo from "./assets/vite.svg";
 import SimpleBottomNavigation from "./BottomNavigation";
 import TopAppBar from "./assets/TopAppBar.jsx";
 import "./App.css";
+import Projects from "./Projects";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
           count is {count}
         </button>
         <p>Testing Changes</p>
+        <Projects />
       </div>
       <div className="BottomBar">
         <SimpleBottomNavigation />
