@@ -42,8 +42,9 @@ function Sonarr() {
       if (calendarData) {
         const formattedEvents = calendarData.map((event) => {
           const start = new Date(event.airDateUtc);
-          const end = new Date(start.getTime() + (event.runtime || 0) * 60000); // Add runTime in minutes
+          const end = new Date(start.getTime() + (event.runtime || 0) * 60000);
           return {
+            title: `${event.series.title} - Season ${event.seasonNumber} Episode ${event.episodeNumber} - "${event.title}"`,
             start,
             end,
             allDay: false,
