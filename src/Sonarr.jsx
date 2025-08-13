@@ -44,12 +44,16 @@ function Sonarr() {
           const start = new Date(event.airDateUtc);
           const end = new Date(start.getTime() + (event.runtime || 0) * 60000); // Add runTime in minutes
           return {
-            title: `${event.series.title} - S${event.seasonNumber}E${event.episodeNumber} - ${event.title}`,
             start,
             end,
             allDay: false,
             runTime: event.runtime,
             airDate: start,
+            overview: event.overview,
+            series: event.series.title,
+            seasonNumber: event.seasonNumber,
+            episodeNumber: event.episodeNumber,
+            episode: event.title,
           };
         });
         setEvents(formattedEvents);
