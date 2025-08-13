@@ -68,3 +68,25 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Make calendar event text smaller and reduce padding */
+.rbc-event {
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  line-height: 1.1;
+  white-space: normal; /* Allow wrapping */
+  word-break: break-word;
+}
+
+/* Optionally, reduce the min height of day cells */
+.rbc-day-slot .rbc-event {
+  min-height: 16px;
+}
+
+/* Increase month view day cell height to show more events */
+.rbc-month-row {
+  min-height: 120px; /* Increase as needed */
+}
+.rbc-date-cell {
+  vertical-align: top;
+}

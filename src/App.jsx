@@ -5,6 +5,8 @@ import SimpleBottomNavigation from "./BottomNavigation";
 import TopAppBar from "./TopAppBar.jsx";
 import "./App.css";
 import Projects from "./Projects";
+import Sonarr from "./Sonarr.jsx";
+import Calendar from "./Calendar.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,7 +30,7 @@ function App() {
           count is {count}
         </button>
         <p>Testing Changes</p>
-        <Projects />
+        <Sonarr />
       </div>
       <div className="BottomBar">
         <SimpleBottomNavigation />
