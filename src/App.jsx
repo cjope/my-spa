@@ -5,9 +5,7 @@ import viteLogo from "./assets/vite.svg";
 import SimpleBottomNavigation from "./BottomNavigation";
 import TopAppBar from "./TopAppBar.jsx";
 import "./App.css";
-import Projects from "./Projects";
 import Sonarr from "./Sonarr.jsx";
-import Calendar from "./Calendar.jsx";
 
 function Home({ count, setCount }) {
   return (

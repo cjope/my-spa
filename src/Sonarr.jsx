@@ -1,9 +1,6 @@
-import { Card } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import { Calendar, momentLocalizer } from "react-big-calendar";
-import moment from "moment";
+import { useState, useEffect } from "react";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-const localizer = momentLocalizer(moment);
+import SonarrCalendar from "./SonarrCalendar";
 
 function Sonarr() {
   const sonarrBaseUrl = "http://localhost:8989";
@@ -45,9 +42,9 @@ function Sonarr() {
       if (calendarData) {
         const formattedEvents = calendarData.map((event) => ({
           title: `${event.series.title} - S${event.seasonNumber}E${event.episodeNumber} - ${event.title}`,
-          start: new Date(event.airDate), // Assuming start_time from API
-          end: new Date(event.airDate), // Assuming end_time from API
-          allDay: event.airDate || false,
+          start: new Date(event.airDate),
+          end: new Date(event.airDate),
+          allDay: false,
         }));
         setEvents(formattedEvents);
       }
@@ -64,12 +61,7 @@ function Sonarr() {
         margin: "50px",
       }}
     >
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-      />
+      <SonarrCalendar events={events} />
     </div>
   );
 }
