@@ -27,7 +27,6 @@ function Sonarr() {
     const endParam = endDate.toISOString();
 
     const url = `${sonarrBaseUrl}/api/v3/calendar?includeSeries=true&start=${startParam}&end=${endParam}&apikey=${sonarrApiKey}`;
-    // const url = `${sonarrBaseUrl}/api/v3/calendar?includeSeries=true&includeEpisodeFile=false&includeEpisodeImages=true&start=${startParam}&end=${endParam}&apikey=${sonarrApiKey}'`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -56,13 +55,20 @@ function Sonarr() {
   }, []);
 
   return (
-    <div style={{ height: "500px" }}>
+    <div
+      style={{
+        background: "#fff",
+        borderRadius: "12px",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        padding: "24px",
+        margin: "50px",
+      }}
+    >
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ margin: "50px" }}
       />
     </div>
   );
