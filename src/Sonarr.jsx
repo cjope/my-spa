@@ -40,13 +40,20 @@ function Sonarr() {
   useEffect(() => {
     fetchSonarrCalendarData().then((calendarData) => {
       if (calendarData) {
-        const formattedEvents = calendarData.map((event) => ({
-          title: `${event.series.title} - S${event.seasonNumber}E${event.episodeNumber} - ${event.title}`,
-          start: new Date(event.airDate),
-          end: new Date(event.airDate),
-          allDay: false,
-        }));
+        const formattedEvents = calendarData.map((event) => {
+          const start = new Date(event.airDateUtc);
+          const end = new Date(start.getTime() + (event.runtime || 0) * 60000); // Add runTime in minutes
+          return {
+            title: `${event.series.title} - S${event.seasonNumber}E${event.episodeNumber} - ${event.title}`,
+            start,
+            end,
+            allDay: false,
+            runTime: event.runtime,
+            airDate: start,
+          };
+        });
         setEvents(formattedEvents);
+        console.log("Sonarr calendarData:", formattedEvents[0]);
       }
     });
   }, []);
